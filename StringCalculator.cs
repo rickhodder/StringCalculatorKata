@@ -11,7 +11,7 @@ namespace StringCalculatorKata
 
             var delimiters = new List<char> {',','\n'};
 
-            var values = numbers.Split(delimiters.ToArray());
+            var values = numbers.Split(delimiters.ToArray(),StringSplitOptions.RemoveEmptyEntries);
 
             return values.Sum(v=> Int32.Parse(v));
         }
