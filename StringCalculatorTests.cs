@@ -14,6 +14,14 @@ namespace StringCalculatorKata
         }
 
         [Theory]
+        [InlineData("1\n2,3",6)]
+        [InlineData("2,3\n4",9)]
+        public void Add_NewLineDelimiterSummedSuccessfully(string numbers, int expectedValue)
+        {
+            Assert.Equal(expectedValue,_sut.Add(numbers));
+        }
+
+        [Theory]
         [InlineData("1,2,3",6)]
         [InlineData("2,3,4",9)]
         public void Add_UnlimitedNumberOfDelimitedNumbers(string numbers, int expectedValue)

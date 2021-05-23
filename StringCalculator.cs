@@ -9,7 +9,9 @@ namespace StringCalculatorKata
         {
             if(string.IsNullOrEmpty(numbers)) return 0;
 
-            var values = numbers.Split(',');
+            var delimiters = new List<char> {',','\n'};
+
+            var values = numbers.Split(delimiters.ToArray());
 
             return values.Sum(v=> Int32.Parse(v));
         }
