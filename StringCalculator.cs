@@ -35,7 +35,9 @@ namespace StringCalculatorKata
                 throw new InvalidOperationException(message);
             }
 
-            return values.Sum(v=> Int32.Parse(v));
+            return values
+                .Where(v=> Int32.Parse(v)<=1000)
+                .Sum(v=> Int32.Parse(v));
         }
     }
 }

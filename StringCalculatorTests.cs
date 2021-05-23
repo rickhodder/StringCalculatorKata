@@ -13,6 +13,15 @@ namespace StringCalculatorKata
             
         }
 
+        [Theory]
+        [InlineData("1,1001",1)]
+        [InlineData("2,1000",1002)]
+
+        public void Add_ValuesOver1000NotIncludedInSum(string numbers,int expectedValue)
+        {
+            Assert.Equal(expectedValue, _sut.Add(numbers));
+        }
+
         [Fact]
         public void Add_NegativeCausesException()
         {
