@@ -12,6 +12,11 @@ namespace StringCalculatorKata
             _sut=new StringCalculator();
             
         }
+        [Fact]
+        public void Add_SpecifyDelimiterActsAsDelimiter()
+        {
+            Assert.Equal(3,_sut.Add("//;\n1;2"));
+        }
 
         [Theory]
         [InlineData("1\n2,3",6)]
