@@ -13,10 +13,12 @@ namespace StringCalculatorKata
             
         }
 
-        [Fact]
-        public void Add_CommaDelimitedNumbersSummedSuccessfully()
+        [Theory]
+        [InlineData("1,2",3)]
+        [InlineData("3,4",7)]
+        public void Add_CommaDelimitedNumbersSummedSuccessfully(string numbers, int expectedValue)
         {
-            Assert.Equal(3, _sut.Add("1,2"));
+            Assert.Equal(expectedValue, _sut.Add(numbers));
 
         }
 
@@ -24,9 +26,9 @@ namespace StringCalculatorKata
         [InlineData("0",0)]
         [InlineData("1",1)]
         [InlineData("2",2)]
-        public void Add_PassSingleIntegerReturnsInteger(string passedValue, int expectedValue)
+        public void Add_PassSingleIntegerReturnsInteger(string numbers, int expectedValue)
         {
-            Assert.Equal(expectedValue, _sut.Add(passedValue));
+            Assert.Equal(expectedValue, _sut.Add(numbers));
         }
 
         [Fact]
