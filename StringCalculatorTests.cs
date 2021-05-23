@@ -13,6 +13,15 @@ namespace StringCalculatorKata
             
         }
 
+        [Theory]
+        [InlineData("0",0)]
+        [InlineData("1",1)]
+        [InlineData("2",2)]
+        public void Add_PassSingleIntegerReturnsInteger(string passedValue, int expectedValue)
+        {
+            Assert.Equal(expectedValue, _sut.Add(passedValue));
+        }
+
         [Fact]
         public void Add_OneReturnsOne()
         {
