@@ -25,24 +25,19 @@ namespace StringCalculatorKata
         [Fact]
         public void Add_OneReturnsOne()
         {
-            var value= _sut.Add("1");
-            Assert.Equal(1,value);
+            Assert.Equal(1,_sut.Add("1"));
         }
 
         [Fact]
         public void Add_ZeroReturnsZero()
         {
-            var value = _sut.Add("0");
-            Assert.Equal(0,value);
+            Assert.Equal(0,_sut.Add("0"));
         }
 
         [Fact]
         public void Add_EmptyStringReturnsZero()
         {
-            var value = _sut.Add("");
-
-            Assert.Equal(0,value);
-        
+            Assert.Equal(0,_sut.Add(""));
         }
     }
 }
