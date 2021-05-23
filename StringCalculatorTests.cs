@@ -13,6 +13,13 @@ namespace StringCalculatorKata
             
         }
 
+        [Fact]
+        public void Add_CommaDelimitedNumbersSummedSuccessfully()
+        {
+            Assert.Equal(3, _sut.Add("1,2"));
+
+        }
+
         [Theory]
         [InlineData("0",0)]
         [InlineData("1",1)]
