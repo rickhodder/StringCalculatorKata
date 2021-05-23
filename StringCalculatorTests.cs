@@ -14,6 +14,13 @@ namespace StringCalculatorKata
         }
 
         [Fact]
+        public void Add_OneReturnsOne()
+        {
+            var value= _sut.Add("1");
+            Assert.Equal(1,value);
+        }
+
+        [Fact]
         public void Add_ZeroReturnsZero()
         {
             var value = _sut.Add("0");
