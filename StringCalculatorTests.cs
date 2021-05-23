@@ -5,27 +5,26 @@ namespace StringCalculatorKata
 {
     public class StringCalculatorTests
     {
+        private StringCalculator _sut;
+
+        public StringCalculatorTests()
+        {
+            _sut=new StringCalculator();
+            
+        }
+
         [Fact]
         public void Add_ZeroReturnsZero()
         {
-            var sut = new StringCalculator();
-            var value = sut.Add("0");
+            var value = _sut.Add("0");
             Assert.Equal(0,value);
         }
 
         [Fact]
         public void Add_EmptyStringReturnsZero()
         {
-            //create String Calculator with add method that takes an integer
+            var value = _sut.Add("");
 
-            // Arrange
-            var sut = new StringCalculator();
-
-            // Act 
-
-            var value = sut.Add("");
-
-            //Assert
             Assert.Equal(0,value);
         
         }
