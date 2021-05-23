@@ -12,6 +12,20 @@ namespace StringCalculatorKata
             _sut=new StringCalculator();
             
         }
+
+        [Fact]
+        public void Add_NegativeCausesException()
+        {
+            var numbers = "-1,2";
+             var ex = Assert.Throws<InvalidOperationException>(() => _sut.Add(numbers));
+            Assert.Equal("Negatives not allowed: -1", ex.Message);
+
+            numbers = "-4,-5";
+            ex = Assert.Throws<InvalidOperationException>(() => _sut.Add(numbers));
+            Assert.Equal("Negatives not allowed: -4,-5", ex.Message);
+
+        }
+        
         [Fact]
         public void Add_SpecifyDelimiterActsAsDelimiter()
         {
